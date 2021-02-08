@@ -8,13 +8,14 @@ public class PathFollow : Seek
 
     int currentIndex = 0;
 
-    float targetRadius = 1f;
+    float targetRadius = .5f;
 
     public override SteeringOutput getSteering()
     {
+
         target = objectPath[currentIndex];
 
-        float targetDistance = (character.transform.position - character.transform.position).magnitude;
+        float targetDistance = (character.transform.position - target.transform.position).magnitude;
 
         if (targetDistance < targetRadius)
         {
